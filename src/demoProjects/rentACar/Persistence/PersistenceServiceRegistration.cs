@@ -20,6 +20,14 @@ namespace Persistence
             services.AddDbContext<BaseDbContext>(options =>
                                                      options.UseSqlServer(
                                                          configuration.GetConnectionString("RentACarCampConnectionString")));
+            
+
+            
+             //ConnectionString for PostgreSQL 
+             /*services.AddDbContext<BaseDbContext>(options =>
+                                                     options.UseNpgsql(configuration.GetConnectionString("RentACarCampPostgreConnectionString")));
+             */
+            
             services.AddScoped<IBrandRepository, BrandRepository>();
 
             return services;
